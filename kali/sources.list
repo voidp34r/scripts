@@ -1,0 +1,64 @@
+# Debian 7 wheezy
+# repositorios brasileiros :P
+deb http://ftp.br.debian.org/debian wheezy main
+deb-src http://ftp.br.debian.org/debian wheezy main
+
+deb http://ftp.br.debian.org/debian wheezy-updates main
+deb-src http://ftp.br.debian.org/debian wheezy-updates main
+
+deb http://security.debian.org/ wheezy/updates main
+deb-src http://security.debian.org/ wheezy/updates main
+
+# deb cdrom:[Debian GNU/Linux 7.4.0 _Wheezy_ - Official i386 CD Binary-1 20140208-12:25]/ wheezy main
+
+# wheezy-updates, previously known as 'volatile'
+#deb http://ftp.br.debian.org/debian/ wheezy-updates main
+#deb-src http://ftp.br.debian.org/debian/ wheezy-updates main
+
+# Repositório Kali Linux
+deb http://http.kali.org/kali kali main non-free contrib
+deb http://security.kali.org/kali-security kali/updates main contrib non-free
+
+# Edge repositorie Kali Linux 
+deb http://repo.kali.org/kali kali-bleeding-edge main
+deb-src http://repo.kali.org/kali kali-bleeding-edge main
+
+# MATE - Desktop repository
+#deb http://repo.mate-desktop.org/debian wheezy main
+# mirror
+#deb http://packages.mate-desktop.org/repo/debian wheezy main
+
+# Google Chrome.
+# Chave GPG: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+deb http://dl.google.com/linux/deb/ stable main 
+
+# Repositório Cinnamon
+#deb http://ftp.iitm.ac.in/debian/ wheezy main
+#deb-src http://ftp.iitm.ac.in/debian/ wheezy main 
+
+# Cinnamon Contrib non-free:
+#deb http://ftp.iitm.ac.in/debian/ wheezy main contrib non-free
+#deb-src http://ftp.iitm.ac.in/debian/ wheezy main contrib non-free  
+
+# Backports Debian Wheezy
+deb http://ftp.debian.org/debian/ wheezy-backports main contrib non-free 
+
+# Rep. Firefox browser
+deb http://packages.linuxmint.com debian import
+
+# deb cdrom:[Debian GNU/Linux 2016.1 _Kali-rolling_ - Official Snapshot amd64 LIVE/INSTALL Binary 20160830-11:29]/ #kali-rolling contrib main non-free
+
+#The Kali Rolling Repository
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+# For source package access, uncomment the following line
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+
+#Retired Kali sana (2.0) Repositories
+deb http://old.kali.org/kali sana main non-free contrib
+# For source package access, uncomment the following line
+deb-src http://old.kali.org/kali sana main non-free contrib
+
+#Extras/Tools/frameworks
+deb http://download.virtualbox.org/virtualbox/debian yakkety contrib
+deb http://download.rethinkdb.com/apt wheezy main
+deb http://dl.bintray.com/deepstreamio/deb wheezy main
