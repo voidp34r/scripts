@@ -83,7 +83,7 @@ echo "" >> /etc/apt/sources.list
     echo
    clear
    echo "Instalando pacotes essenciais..."
-   apt-get install build-essentials libssl-dev git curl python-software-properties
+   apt-get install build-essential libssl-dev git curl python-software-properties dkms
    aptitude install libavcodec-extra
     aptitude install gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-fluendo-mp3 gstreamer0.10-pulseaudio
    aptitude install libgstreamer-perl libgstreamer-interfaces-perl
@@ -124,8 +124,9 @@ echo "" >> /etc/apt/sources.list
    apt-get install -y deepstream.io
    clear
    echo "Instalando virtual box"
-   apt-get install virtualbox-5.1
+   apt-get install virtualbox-5.1 
    gpasswd -a $USER vboxusers
+   VBoxManage extpack install --replace *.vbox-extpack
    clear
    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
    apt-get install -y nodejs
