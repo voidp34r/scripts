@@ -34,16 +34,32 @@ if [ "$op"="s" ];then
     echo "deb http://dl.bintray.com/deepstreamio/deb jessie main" >> /etc/apt/sources.list
     #rethinkdb
 echo "deb http://download.rethinkdb.com/apt jessie main" >> /etc/apt/sources.list
-    # proximo
+    # virtualbox
 echo "deb http://download.virtualbox.org/virtualbox/debian jessie contrib" >> /etc/apt/sources.list
-    # proximo
-echo "" >> /etc/apt/sources.list
+    # Volatile (softwares atualizados com frequência, Clamav, etc)
+echo "deb http://http.debian.net/debian/ jessie-updates main contrib non-free" >> /etc/apt/sources.list
+    # Backports (no momento)
+echo "deb http://http.debian.net/debian/ jessie-backports main contrib non-free" >> /etc/apt/sources.list
+    # google chrome
+echo "deb http://dl.google.com/linux/deb/ stable main" >> /etc/apt/sources.list.d/extras.list
+	# Project Tor
+echo "deb http://deb.torproject.org/torproject.org jessie main" >> /etc/apt/sources.list.d/extras.list
+# proximo
+#echo "" >> /etc/apt/sources.list
     sleep 2
     clear
     echo "Adicionando chaves dos pacotes..."
+    # rethinkdb
     wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
+    # deepstream
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+    # virtualbox
     wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+    # chrome
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    # Tor Project.
+    gpg --keyserver hkp://subkeys.pgp.net --recv-keys 219EC810 && gpg --export 219EC810 | apt-key add -
+    #
     sleep 2
     clear
     echo "Atualizando o sistema..."
